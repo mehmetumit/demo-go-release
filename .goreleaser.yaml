@@ -7,12 +7,15 @@ before:
     # you may remove this if you don't need go generate
     #- go generate ./...
 builds:
-  - env:
+  - main: ./cmd/main.go
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
       - windows
       - darwin
+    ldflags:
+    - -X demo/pkg/version.Version={{ .Version }} -X demo/pkg/version.GitCommit={{ .Commit }}
 
 archives:
   - format: tar.gz
