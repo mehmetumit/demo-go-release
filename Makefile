@@ -1,4 +1,4 @@
-COVERAGE_FILE=coverage.out
+COVERAGE_FILE=coverage.txt
 BENCHMARKS="Add|Subtract"
 all:
 build-image:
@@ -6,7 +6,7 @@ build-image:
 run-image:
 	@docker run --rm demo-go-release:latest
 test-covarage:
-	go test -v ./cmd -coverprofile=${COVERAGE_FILE}
+	go test -v ./cmd -race -coverprofile=${COVERAGE_FILE} -covermode=atomic
 	go tool cover -html ${COVERAGE_FILE}
 test:
 	go test -v ./cmd
