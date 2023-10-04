@@ -1,3 +1,4 @@
+# Multi stage build
 FROM golang:alpine as builder
 
 WORKDIR /app

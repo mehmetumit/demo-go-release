@@ -5,7 +5,12 @@ import (
 	"fmt"
 )
 
+func DemoAdd(firstNum int, secondNum int)int{
+    return firstNum + secondNum
+}
+func DemoSubtract(firstNum int, secondNum int)int{
+    return firstNum - secondNum
+}
 func main(){
     fmt.Printf("Version: %s \nCommit: %s\n", version.Version, version.GitCommit)
-    fmt.Println("Demo")
 }
